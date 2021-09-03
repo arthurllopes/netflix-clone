@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const FreaturingContainer = styled.section`
-    height: 100vh;
+    height: 110vh;
     background-image: ${({image}) => `url(https://image.tmdb.org/t/p/original${image})`};
     background-size: cover;
     background-position: center;
@@ -17,16 +17,18 @@ export const FreaturingContainer = styled.section`
         background: linear-gradient(to top, #111 10%, transparent 30%);
     }
     .information{
-        width: 60%;
+        width: 50%;
         height: 100%;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         justify-content: center;
-        padding: 0 2rem;
+        padding: 100px 2rem 200px;
+
 
         h2{
             font-size: 4rem;
+            word-break: normal;
         }
         div{
             margin: 4px 0;
@@ -38,15 +40,13 @@ export const FreaturingContainer = styled.section`
     .details{
         display: flex;
         justify-content: space-between;
-        flex-wrap: nowrap;
-        width: 60%;
+        width: 90%;
     }
     .buttons{
         display: flex;
         justify-content: flex-start;
         align-items: center;
         width: 100%;
-        padding: 1rem;
     }
     .watchButton{
         background-color: #FFF;
@@ -67,14 +67,39 @@ export const FreaturingContainer = styled.section`
     .watchButton,
     .myListButton {
         display: inline-block;
-        font-size: 20px;
+        font-size: 1rem;
         font-weight: bold;
-        padding: 12px 25px;
+        padding: 8px 20px;
         border-radius: 5px;
         text-decoration: none;
         margin-right: 10px;
         opacity: 1;
         transition: all ease 0.2;
         text-justify: center;
+    }
+    
+    @media (max-width: 760px){
+        .information{
+            width: 80%;
+            h2{
+                font-size: 2rem;
+            }
+            p{
+                font-size: 1rem;
+            }
+        }
+        .details{
+            width: 100%;
+        }
+        .watchButton,
+        .myListButton{
+            font-size: .85rem;
+        }
+    }
+    @media (max-width: 430px){
+        .information{
+            width: 100%;
+            padding-left: 1rem;
+        }
     }
 `

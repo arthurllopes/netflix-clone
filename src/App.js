@@ -2,15 +2,18 @@ import React from "react";
 import Featuring from "./Components/Featuring/Featuring";
 import Footer from "./Components/Footer/Footer";
 import Header from "./Components/Header/Header";
-import MovieList from "./Components/MovieList/MovieList";
+import Library from "./Components/Library/Library";
+import Loading from "./Components/Loading/Loading";
 import {HomeList} from './service/tmdb'
 import { GlobalStyle } from "./style/GlobalStyle";
 
 function App() {
+  const [loading, setLoading] = React.useState(false)
   const [data, setData] = React.useState([])
   const [featuring, setFeaturing] = React.useState(null)
 
   React.useEffect(() => {
+    setLoading(true)
     const loadAll = async () => {
       const list = await HomeList.getHomeList()
       setData(list)
@@ -21,6 +24,7 @@ function App() {
       const movieInfo = await HomeList.getMovieInfo(randomMovie.id, 'tv')
       setFeaturing(movieInfo)
 
+      setLoading(false)
     }
     loadAll()
   }, [])
@@ -28,15 +32,16 @@ function App() {
   
 
   return (
-    <div className="App">
+    <>
+      {loading? <Loading /> : 
+      <>
       <GlobalStyle />
       <Header />
       {featuring && <Featuring movie={featuring} />}
-      {data && data.map((item) => (
-        <MovieList key={item.slug} title={item.title} items={item.items} />
-      ))}
+      <Library data={data} />
       <Footer />
-    </div>
+      </>}
+    </>
   );
 }
 
