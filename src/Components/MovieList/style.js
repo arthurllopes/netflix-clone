@@ -53,5 +53,4 @@ export const List = styled.div`
     overflow-x: hidden;
     margin-left: ${({position}) => `${position}px`};
     transition: all ease .5s;
-    width: ${({width}) => `${width}px`};
 `
