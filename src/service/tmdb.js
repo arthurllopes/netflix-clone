@@ -72,5 +72,22 @@ export const HomeList = {
             }
         }
         return info
+    },
+    getSimilarMovies: async(movieID, type) => {
+        let response;
+        if(movieID) {
+            switch(type){
+                case 'movie':
+                    response = await basicFetch(`/movie/${movieID}/similar?`)
+                    break;
+                case 'tv':
+                    response = await basicFetch(`/tv/${movieID}/similar?`)
+                    break;
+                default:
+                    console.log('nada')
+                break;     
+            }
+        }
+        return response
     }
 }
