@@ -31,7 +31,7 @@ const Featuring = ({movie}) => {
                             <a className="watchButton" href={movie.homepage} target="_blank" rel="noreferrer">
                                 <span role="img" aria-label="play"><BsFillPlayFill /></span> Assistir
                             </a>
-                            <a href="#" className="myListButton">
+                            <a href="https://www.linkedin.com/in/arthur-lopes-bb71391ab/" className="myListButton">
                                 Minha lista
                             </a>
                         </div>
