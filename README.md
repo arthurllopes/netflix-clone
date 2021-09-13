@@ -3,7 +3,7 @@
 O clone foi feito a partir do tutorial do Bonieky Lacerda, da B7Web. Além do tutorial, adicionei um sistema de rotas onde, ao clique em algum filme, redireciona para uma página com informações do mesmo, e mostra uma lista de filmes recomendados.
 
 ### Link para demonstração
-🔗 - [https://zealous-albattani-7a44cb.netlify.app/](https://zealous-albattani-7a44cb.netlify.app/)
+🔗 - [https://distracted-fermat-266871.netlify.app/](https://distracted-fermat-266871.netlify.app/)
 
 ## Projeto 
  - Clone da Netflix, onde os dados são consumidos pela API gratuita do site The Movie Database.
